@@ -1,0 +1,27 @@
+[
+  {
+    "Nombre": "Jabon Liquido matic limzul",
+    "Descripcion": "Jabon Liquido Matic Limzul Bot 800 Ml",
+    "Precio": 400,
+    "FotoUrl": "jabonAla.jpg",
+    "TipoId": 1,
+    "MarcaId": 1
+  },
+  {
+    "Nombre": "P.Higienico 80 Mts Campanita X 4 32 M2",
+    "Descripcion": "P.Higienico 80 Mts Campanita X 4 32 M2",
+    "Precio": 701,
+    "FotoUrl": "papelcampanita.jpg",
+    "TipoId": 2,
+    "MarcaId": 2
+  },
+
+  {
+    "Nombre": "Lavandina Común Odex 2 Ltr",
+    "Descripcion": "Lavandina Común Odex 2 Ltr",
+    "Precio": 222,
+    "FotoUrl": "lavandinaOdex.jpg",
+    "TipoId": 3,
+    "MarcaId": 3
+  }
+]

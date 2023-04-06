@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Tienda</name>
+    </assembly>
+    <members>
+        <member name="M:TiendaApi.Controllers.ProductosController.GetProductos">
+            <summary>
+            Listar todos los productos
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:TiendaApi.Controllers.ProductosController.GetProducto(System.Int32)">
+            <summary>
+            Trae un producto por id 
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
