@@ -18,6 +18,9 @@ using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
 using Tienda.Helpers;
+using Tienda.Middleware;
+using Tienda.Errors;
+using Tienda.Extensions;
 
 namespace Tienda
 {
@@ -35,41 +38,25 @@ namespace Tienda
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
+           
             services.AddAutoMapper(typeof(MappingProfiles));
             services.AddControllers();
             services.AddDbContext<TiendaContext>(x =>
-          x.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Tienda", Version = "v1" });
-                // Set the comments path for the Swagger JSON and UI.
-                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
-                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
-                c.IncludeXmlComments(xmlPath);
-
-            });
+            x.UseSqlServer(_config.GetConnectionString("DefaultConnection")));
+            services.AddAplicationServices();
+            services.AddSwaggerDocumentation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseSwagger();
-
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Tienda");
-
-            });
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
+          
+            app.UseMiddleware<ExeptionMiddleware>();
 
             app.UseRouting();
-
+            app.UseStaticFiles();
             app.UseAuthorization();
-
+            app.UserSwaggerDocuentation();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

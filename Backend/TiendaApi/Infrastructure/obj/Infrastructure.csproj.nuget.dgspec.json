@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Core\\Core.csproj": {
+    "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\facu1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Core\\obj\\",
+        "outputPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj",
         "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Infrastructure\\Infrastructure.csproj",
+        "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj",
         "packagesPath": "C:\\Users\\facu1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\ApiConSwagger\\Tienda\\Core\\Core.csproj"
+              "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\Core.csproj"
               }
             }
           }
