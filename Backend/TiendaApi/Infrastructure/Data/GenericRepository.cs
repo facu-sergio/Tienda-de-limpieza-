@@ -1,5 +1,6 @@
 ﻿using Core.Entities;
 using Core.Interfaces;
+using Core.Specifications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Internal;
 using System;
@@ -28,59 +29,72 @@ namespace Infrastructure.Data
           
         }
 
-        public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string addProperties = null)
+
+        public async Task<T> GetEntityWithSpec(ISpecification<T> spec)
         {
-            IQueryable<T> query = _dbset;
-
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
-
-            if (addProperties != null)
-            {
-                //Busco separar las propiedades por la coma y elimina del areglo que devulve los elementos vacios
-                foreach (var includePorperties in addProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    query = query.Include(includePorperties);
-
-                }
-                return query;
-            }
-
-            if (orderBy != null)
-            {
-                return await orderBy(query).ToListAsync();
-            }
-
-            return await query.ToListAsync();
+            return await ApplySpecification(spec).FirstOrDefaultAsync();
         }
 
-        public async Task<T> GetFirst(Expression<Func<T, bool>> filter = null, string addProperties = null)
+        public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
         {
-            IQueryable<T> query = _dbset;
-
-            if (filter != null)
-            {
-                query = query.Where(filter);
-            }
-
-            if (addProperties != null)
-            {
-                //Busco separar las propiedades por la coma y elimina del areglo que devulve los elementos vacios
-                foreach (var includePorperties in addProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
-                {
-                    query = query.Include(includePorperties);
-
-                }
-                return await query.FirstOrDefaultAsync();
-            }
-
-            return await query.FirstOrDefaultAsync();
-
+            return await ApplySpecification(spec).ToListAsync();
         }
 
-       
+        private IQueryable<T> ApplySpecification(ISpecification<T> spec)
+        {
+            return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec);
+        }
+        /*public async Task<IEnumerable<T>> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string addProperties = null)
+      {
+          IQueryable<T> query = _dbset;
+
+          if (filter != null)
+          {
+              query = query.Where(filter);
+          }
+
+          if (addProperties != null)
+          {
+              //Busco separar las propiedades por la coma y elimina del areglo que devulve los elementos vacios
+              foreach (var includePorperties in addProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+              {
+                  query = query.Include(includePorperties);
+
+              }
+              return query;
+          }
+
+          if (orderBy != null)
+          {
+              return await orderBy(query).ToListAsync();
+          }
+
+          return await query.ToListAsync();
+      }*/
+
+        /*public async Task<T> GetFirst(Expression<Func<T, bool>> filter = null, string addProperties = null)
+       {
+           IQueryable<T> query = _dbset;
+
+           if (filter != null)
+           {
+               query = query.Where(filter);
+           }
+
+           if (addProperties != null)
+           {
+               //Busco separar las propiedades por la coma y elimina del areglo que devulve los elementos vacios
+               foreach (var includePorperties in addProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+               {
+                   query = query.Include(includePorperties);
+
+               }
+               return await query.FirstOrDefaultAsync();
+           }
+
+           return await query.FirstOrDefaultAsync();
+
+       }*/
     }
 
 

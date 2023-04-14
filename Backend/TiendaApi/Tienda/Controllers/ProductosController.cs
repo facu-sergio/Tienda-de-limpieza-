@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using Tienda.Controllers;
 using Tienda.Errors;
 using TiendaApi.Dtos;
+using Core.Specifications;
 
 namespace TiendaApi.Controllers
 {
@@ -31,7 +32,8 @@ namespace TiendaApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductoDto>>> GetProductos()
         {
-            var productos = await _ProductoRepository.GetAll(addProperties: "Tipo,Marca");
+            var spec = new ProductosConMarcayTipo();
+            var productos = await _ProductoRepository.ListAsync(spec);
             return productos.Select(producto => _mapper.Map<Producto,ProductoDto>(producto)).ToList();
         }
 
@@ -43,7 +45,8 @@ namespace TiendaApi.Controllers
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductoDto>> GetProducto(int id)
         {
-            var producto = await _ProductoRepository.GetFirst(x=> x.Id == id, addProperties: "Tipo,Marca");
+            var spec = new ProductosConMarcayTipo();
+            var producto = await _ProductoRepository.GetEntityWithSpec(spec);
 
             if (producto == null) return NotFound(new ApiResponse(404)); 
 
