@@ -4,7 +4,7 @@
         <name>Tienda</name>
     </assembly>
     <members>
-        <member name="M:TiendaApi.Controllers.ProductosController.GetProductos">
+        <member name="M:TiendaApi.Controllers.ProductosController.GetProductos(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
             Listar todos los productos
             </summary>

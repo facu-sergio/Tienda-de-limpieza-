@@ -30,9 +30,10 @@ namespace TiendaApi.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductoDto>>> GetProductos()
+        public async Task<ActionResult<IEnumerable<ProductoDto>>> GetProductos(
+            string sort,int? marcaId, int? tipoId)
         {
-            var spec = new ProductosConMarcayTipo();
+            var spec = new ProductosConMarcayTipo(sort, marcaId, tipoId);
             var productos = await _ProductoRepository.ListAsync(spec);
             return productos.Select(producto => _mapper.Map<Producto,ProductoDto>(producto)).ToList();
         }
@@ -45,7 +46,7 @@ namespace TiendaApi.Controllers
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
         public async Task<ActionResult<ProductoDto>> GetProducto(int id)
         {
-            var spec = new ProductosConMarcayTipo();
+            var spec = new ProductosConMarcayTipo(id);
             var producto = await _ProductoRepository.GetEntityWithSpec(spec);
 
             if (producto == null) return NotFound(new ApiResponse(404)); 
