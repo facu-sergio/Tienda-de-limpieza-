@@ -15,12 +15,20 @@ namespace Infrastructure.Data
     public class GenericRepository<T> : IGenericRepository<T> where T : BaseEntity
     {
         private readonly TiendaContext _context;
-        private readonly DbSet<T> _dbset;
 
         public GenericRepository(TiendaContext context)
         {
             _context = context;
-            _dbset = context.Set<T>();  
+        }
+
+        public async Task<int> CountAsync(ISpecification<T> spec)
+        {
+            return await ApplySpecification(spec).CountAsync();
+        }
+
+        public async Task<IReadOnlyList<T>> ListAllAsync()
+        {
+            return await _context.Set<T>().ToListAsync();
         }
 
         public async Task<T> GetByIDAsycn(int id)
@@ -34,6 +42,8 @@ namespace Infrastructure.Data
         {
             return await ApplySpecification(spec).FirstOrDefaultAsync();
         }
+
+       
 
         public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec)
         {

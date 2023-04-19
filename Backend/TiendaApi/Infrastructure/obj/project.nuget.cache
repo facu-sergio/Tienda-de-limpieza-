@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jLuZCNXj1ZX6gQujg4AD7c+899u1ICaAtpYdnF7Aw6HL0T+ofvuTbi3IlQ+QgtSGTesEyOBpfGCsPWpYSiG4ig==",
+  "dgSpecHash": "qtnitJtvNsUSYy86McuP/hcnj0UDaid7YDtcsjSdr/0Abhe7x5rPN9JFeRsE8u4uPPIb8nQrQPZxllzcOrKJkg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\　\\Programacion\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\facu1\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\facu1\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

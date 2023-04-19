@@ -10,6 +10,7 @@ using Tienda.Controllers;
 using Tienda.Errors;
 using TiendaApi.Dtos;
 using Core.Specifications;
+using Tienda.Dtos;
 
 namespace TiendaApi.Controllers
 {
@@ -18,24 +19,37 @@ namespace TiendaApi.Controllers
     public class ProductosController : BaseApiController
     {
         private readonly IGenericRepository<Producto> _ProductoRepository;
+        private readonly IGenericRepository<Marca> _MarcaRepository;
+        private readonly IGenericRepository<Tipo> _TipoRepository;
+
         private readonly IMapper _mapper;
 
-        public ProductosController(IGenericRepository<Producto> productoRepository, IMapper mapper)
+        public ProductosController(IGenericRepository<Producto> productoRepository, IGenericRepository<Marca> marcaRepository, IGenericRepository<Tipo> tipoRepository, IMapper mapper)
         {
             _ProductoRepository = productoRepository;
+            _MarcaRepository = marcaRepository;
+            _TipoRepository = tipoRepository;
             _mapper = mapper;
         }
+
         /// <summary>
         /// Listar todos los productos
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductoDto>>> GetProductos(
-            string sort,int? marcaId, int? tipoId)
+         public async Task<ActionResult<Pagination<ProductoDto>>> GetProducts(
+            [FromQuery] ProductosSpecParams productoParams)
         {
-            var spec = new ProductosConMarcayTipo(sort, marcaId, tipoId);
+            var spec = new ProductosConMarcayTipo(productoParams);
+            var countSpec = new ProductosConFiltrosParaEspecificaciónDeConteo(productoParams);
+
+            var totalPruductos = await _ProductoRepository.CountAsync(countSpec);
             var productos = await _ProductoRepository.ListAsync(spec);
-            return productos.Select(producto => _mapper.Map<Producto,ProductoDto>(producto)).ToList();
+
+
+            var data = _mapper.Map<IReadOnlyList<ProductoDto>>(productos);
+
+            return Ok(new Pagination<ProductoDto>(productoParams.PageIndex,productoParams.PageSize,totalPruductos,data));
         }
 
         /// <summary>
@@ -52,6 +66,18 @@ namespace TiendaApi.Controllers
             if (producto == null) return NotFound(new ApiResponse(404)); 
 
             return _mapper.Map<Producto, ProductoDto>(producto); 
+        }
+
+        [HttpGet("marcas")]
+        public async Task<ActionResult<IReadOnlyList<Marca>>> getMarcas()
+        {
+            return Ok(await _MarcaRepository.ListAllAsync()); 
+        }
+
+        [HttpGet("tipos")]
+        public async Task<ActionResult<IReadOnlyList<Tipo>>> getTipos()
+        {
+            return Ok(await _TipoRepository.ListAllAsync());
         }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eMOtbPUpoO2uQ+f7MhQm09FlAgN9Y6yTarKOvM7UxpYutuItQyUQMB4ZiI6Bssd/HMODjmaOGuxlUhX24TfJ9Q==",
+  "dgSpecHash": "TZwAskBOa5+eyXn9bbEjVyrEdYNaOyqP11AKEoO+DQt4SxlGUG3IwIfbsT7wCmQfqlsl9VfjZuP193V8r7qP9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Tienda\\Tienda.csproj",
+  "projectFilePath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\　\\Programacion\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Tienda\\Tienda.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\facu1\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\facu1\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

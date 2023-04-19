@@ -18,3 +18,13 @@ C:\Users\facu1\OneDrive\Escritorio\Tienda-de-limpieza-\Backend\TiendaApi\Core\ob
 C:\Users\facu1\OneDrive\Escritorio\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
 C:\Users\facu1\OneDrive\Escritorio\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.dll
 C:\Users\facu1\OneDrive\Escritorio\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.pdb
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\bin\Debug\netcoreapp3.1\Core.deps.json
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\bin\Debug\netcoreapp3.1\Core.dll
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\bin\Debug\netcoreapp3.1\Core.pdb
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.csproj.AssemblyReference.cache
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfoInputs.cache
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.AssemblyInfo.cs
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.csproj.CoreCompileInputs.cache
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.dll
+C:\Users\facu1\OneDrive\Escritorio\　\Programacion\Tienda-de-limpieza-\Backend\TiendaApi\Core\obj\Debug\netcoreapp3.1\Core.pdb

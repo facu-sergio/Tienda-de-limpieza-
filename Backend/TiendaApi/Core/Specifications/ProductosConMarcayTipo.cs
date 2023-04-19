@@ -7,19 +7,20 @@ namespace Core.Specifications
 {
     public class ProductosConMarcayTipo : BaseSpecification<Producto>
     {
-        public ProductosConMarcayTipo(string sort, int? marcaId, int?TipoId)
-            : base (x=>
-                     (!marcaId.HasValue || x.MarcaId == marcaId ) &&
-                     (!TipoId.HasValue || x.TipoId == TipoId)
+        public ProductosConMarcayTipo(ProductosSpecParams productoParams)
+            : base (x =>
+                     (string.IsNullOrEmpty(productoParams.Search)|| x.Nombre.ToLower().Contains(productoParams.Search)) &&
+                     (!productoParams.MarcaId.HasValue || x.MarcaId == productoParams.MarcaId ) &&
+                     (!productoParams.TipoId.HasValue || x.TipoId == productoParams.TipoId)
                   )
         {
             AddInclude(x => x.Marca);
             AddInclude(x => x.Tipo);
             AddOrderBy(x => x.Nombre);
-
-            if (!string.IsNullOrEmpty(sort))
+            ApplyPaging(productoParams.PageIndex > 0 ? productoParams.PageSize * (productoParams.PageIndex - 1) : 0, productoParams.PageSize);
+            if (!string.IsNullOrEmpty(productoParams.Sort))
             {
-                switch (sort)
+                switch (productoParams.Sort)
                 {
                     case "precioAsc":
                         AddOrderBy(p => p.Precio);

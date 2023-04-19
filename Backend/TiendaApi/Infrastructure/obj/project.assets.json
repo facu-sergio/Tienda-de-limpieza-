@@ -5137,11 +5137,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\facu1\\OneDrive\\Escritorio\\　\\Programacion\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj",
       "projectName": "Infrastructure",
-      "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj",
+      "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\　\\Programacion\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\Infrastructure.csproj",
       "packagesPath": "C:\\Users\\facu1\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\　\\Programacion\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -5162,8 +5162,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\Core.csproj"
+            "C:\\Users\\facu1\\OneDrive\\Escritorio\\　\\Programacion\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\facu1\\OneDrive\\Escritorio\\　\\Programacion\\Tienda-de-limpieza-\\Backend\\TiendaApi\\Core\\Core.csproj"
             }
           }
         }

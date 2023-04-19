@@ -55,6 +55,7 @@ namespace Tienda
 
             app.UseRouting();
             app.UseStaticFiles();
+            app.UseCors("CorsPolicy");
             app.UseAuthorization();
             app.UserSwaggerDocuentation();
             app.UseEndpoints(endpoints =>
